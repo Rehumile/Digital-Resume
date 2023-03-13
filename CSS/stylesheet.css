@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+}
+html {
+    font-size: 10px;
+    font-family: Poppins, sans-serif;
+}
+/* common styles */
+a {
+    text-decoration: none;
+}
+
+
+
+
+/* ------------NAVIGATION BAR--------------*/
+#nav-bar {
+  background-color: #272828;   
+}
+#nav-bar ul{
+    font-size: 2em;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+}
+#nav-bar ul li {
+    list-style-type: none;
+    color: #fff;
+}
+
+/* ------------Profile/HERO SECTION----------*/
+.profile-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr ;
+    color: #fff;
+    background-color: #272828;
+}
