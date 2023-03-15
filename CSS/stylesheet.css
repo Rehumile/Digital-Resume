@@ -8,6 +8,8 @@
 html {
     font-size: 10px;
     font-family: Poppins, sans-serif;
+    line-height: 1.6;
+    background-color: #ebecf0;
 }
 /* common styles */
 a {
@@ -18,11 +20,21 @@ a {
 
 
 /* ------------NAVIGATION BAR--------------*/
+
+
+    
+
 #nav-bar {
   background-color: #272828;   
+  width: 90%;
+  margin: 0 auto;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+ border-bottom: solid 2px white;
+ border-top: solid 2px white;
 }
 #nav-bar ul{
-    font-size: 2em;
+    font-size: 1.5em;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
 }
@@ -31,10 +43,196 @@ a {
     color: #fff;
 }
 
-/* ------------Profile/HERO SECTION----------*/
-.profile-wrapper {
+
+/*-------------LAYOUT----------------*/
+/*.container {
+    max-width: 1000px;
+    width: 90%;
+    margin: 0 auto; /* to center the container
     display: grid;
-    grid-template-columns: 1fr 2fr 1fr ;
-    color: #fff;
+    padding: 7rem;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+}
+@media screen and (max-width: 768px) {
+    .container {
+        width: 100%;
+        grid-template-columns: 1fr;
+        padding: 3rem;
+        gap: 7rem;
+    }
+}
+
+.profile {
+    grid-column: 1 / -1;
+    margin-bottom: 2rem;
     background-color: #272828;
+}
+
+.profile-wrapper {
+    display: flex;
+    gap: 4rem;
+    padding: 2rem;
+}
+.profile-image {
+    max-width: 200px;
+}
+.profile-image img {
+    border-radius: 120%;
+}
+.profile-firstname {
+    color: white;
+    font-weight: 200;
+    font-size: 2rem; /* clamp(2rem, 8vw, 4rem)
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: -0.8rem;
+}
+.profile-lastname {
+    color: rgb(45, 45, 196);
+    font-weight: 200;
+    font-size: 4rem; /*clamp(2.5rem, 15vw, 7rem)
+    display: block;
+    text-transform: uppercase;
+}*/
+
+
+
+/*----------LAYOUT-------------*/
+.container {
+    max-width: 1000px;
+    width: 90%;
+    margin: 0 auto; /* to center the container*/
+    border: 1px solid black;
+}
+
+/*-------------Profile-----------*/
+.profile{
+    background-color: #272828;
+    padding: 2rem;
+    border-bottom: 2px solid rgb(45, 45, 196);
+}
+
+.profile-wrapper {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 1rem;
+}
+@media  screen and (max-width: 768px) {
+    .profile-wrapper {
+        flex-direction: column;
+    }
+}
+
+.profile-image {
+    max-width: 200px;
+}
+.profile-image img {
+    border-radius: 120%;
+}
+.profile-firstname {
+    color: white;
+    font-weight: 200;
+    font-size: 3rem; /* clamp(2rem, 8vw, 4rem)*/
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: -0.8rem;
+}
+.profile-lastname {
+    color: rgb(45, 45, 196);
+    font-weight: 200;
+    font-size: 4rem; /*clamp(2.5rem, 15vw, 7rem)**/
+    display: block;
+    text-transform: uppercase;
+}
+.profile-title {
+    color: white;
+    font-size: 1 rem;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+.profile-contact {
+    list-style-type: none;
+}
+.profile-contact a {
+    color: white
+}
+
+/*---------------RESUME--------------*/
+
+.resume {
+    display: grid;
+    grid-template-columns:1fr 2fr;
+    gap: 5rem;
+    padding: 3rem;
+    background-color: #fff;
+}
+
+@media screen and (max-width: 768px) {
+    .resume {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+.resume-description {
+    margin-top: 1rem;
+    font-size: 1rem;
+    font-weight:300;
+    color: #737373;
+}
+.resume-heading {
+    color:#272828;
+    font-weight: 500;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+}
+.resume-subheading {
+    color: #282522;
+    font-weight: 500;
+    font-size: 1.2rem;
+}
+.resume-left, .resume-right {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem
+}
+.resume-left {
+    padding-right: 2rem;
+}
+
+/*-----SKILL SECTION---------*/
+
+.resume-skills ul {
+    margin-top: 1rem;
+    margin-left:2rem;
+    line-height: 2;
+}
+
+/*--------EDUCATION SECTION--------*/
+
+.education-container, .experience-container, .project-container {
+    display:flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding-top: 1rem;
+}
+.education-2 ul {
+    list-style-type: none;
+}
+.education-content, .experience-content, .project-content {
+    display: flex;
+    gap: 1.2rem;
+    align-items: flex-start;
+}
+.education-content .year, .experience-content .year, .project-content .year {
+    padding-top: 0.3rem;
+}
+
+/*Border bottom*/
+
+.resume-introduction, .resume-skills, .resume-education {
+    border-bottom: 1px solid #a6a6a6;
+    padding-bottom: 1.5rem;
 }
