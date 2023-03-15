@@ -10,20 +10,18 @@ html {
     font-family: Poppins, sans-serif;
     line-height: 1.6;
     background-color: #ebecf0;
+    scroll-behavior: smooth;
 }
 /* common styles */
 a {
     text-decoration: none;
+    color: white;
 }
 
 
 
 
 /* ------------NAVIGATION BAR--------------*/
-
-
-    
-
 #nav-bar {
   background-color: #272828;   
   width: 90%;
@@ -34,14 +32,15 @@ a {
  border-top: solid 2px white;
 }
 #nav-bar ul{
-    font-size: 1.5em;
+    font-size: 1.2rem;
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(6, 1fr);
 }
 #nav-bar ul li {
     list-style-type: none;
     color: #fff;
 }
+
 
 
 /*-------------LAYOUT----------------*/
@@ -106,60 +105,85 @@ a {
     border: 1px solid black;
 }
 
-/*-------------Profile-----------*/
+/*-------------PROFILE/HERO SECTION-----------*/
 .profile{
     background-color: #272828;
     padding: 2rem;
     border-bottom: 2px solid rgb(45, 45, 196);
 }
 
-.profile-wrapper {
-    display: flex;
-    justify-content: space-evenly;
+.profile-wrapper { /*used display grid because */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     gap: 1rem;
-}
-@media  screen and (max-width: 768px) {
-    .profile-wrapper {
-        flex-direction: column;
-    }
+    width: 85%;
+    margin: auto;
 }
 
+.profile-info{
+    margin-right: 1rem;
+}
 .profile-image {
     max-width: 200px;
+    margin-left: 5rem;
 }
 .profile-image img {
     border-radius: 120%;
 }
 .profile-firstname {
     color: white;
-    font-weight: 200;
-    font-size: 3rem; /* clamp(2rem, 8vw, 4rem)*/
+    font-weight: 500;
+    font-size: 4.5rem; /* clamp(2rem, 8vw, 4rem)*/
     text-transform: uppercase;
     display: block;
-    margin-bottom: -0.8rem;
+    margin-bottom: 0;
+
 }
 .profile-lastname {
     color: rgb(45, 45, 196);
-    font-weight: 200;
+    font-weight: 500;
     font-size: 4rem; /*clamp(2.5rem, 15vw, 7rem)**/
     display: block;
     text-transform: uppercase;
+    margin-top: 0;
+    margin-bottom: 1rem;
 }
 .profile-title {
     color: white;
-    font-size: 1 rem;
+    font-size: 1.5 rem;
     font-weight: 400;
     text-transform: uppercase;
 }
-
 .profile-contact {
+    grid-column: 1 / 3;
+}
+.profile-contact li {
     list-style-type: none;
+    display: flex;
+    flex-direction: column;
+   
+}
+.profile-contact ul {
+    display: flex;
+    justify-content: space-evenly;
+    border-top: 2px solid white;
+    border-bottom: 2px solid white;
+    width: 80%;
+    margin: 0 auto;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
 }
 .profile-contact a {
-    color: white
+    color: white;
+    
+    
+}
+.material-symbols-outlined{
+    color: white;
+    margin-bottom: 0.5rem;
 }
 
-/*---------------RESUME--------------*/
+/*---------------RESUME MAIN SECTION--------------*/
 
 .resume {
     display: grid;
@@ -170,10 +194,7 @@ a {
 }
 
 @media screen and (max-width: 768px) {
-    .resume {
-        display: flex;
-        flex-direction: column;
-    }
+    
 }
 
 .resume-description {
@@ -200,6 +221,17 @@ a {
 }
 .resume-left {
     padding-right: 2rem;
+    padding-left: 2rem;
+}
+.resume-right{
+    padding-right: 2rem;
+}
+.resume-bottom {
+    border-top: 1px solid #a6a6a6;
+    grid-column: 1 / 3;
+    width: 80%;
+   margin: 0 auto;
+    padding-top: 3rem;
 }
 
 /*-----SKILL SECTION---------*/
@@ -223,7 +255,7 @@ a {
 }
 .education-content, .experience-content, .project-content {
     display: flex;
-    gap: 1.2rem;
+    gap: 1.2rem; /*instead of using margin. used gap to create space*/
     align-items: flex-start;
 }
 .education-content .year, .experience-content .year, .project-content .year {
@@ -235,4 +267,145 @@ a {
 .resume-introduction, .resume-skills, .resume-education {
     border-bottom: 1px solid #a6a6a6;
     padding-bottom: 1.5rem;
+}
+
+/*-------------FORM SECTION--------------------*/
+
+form {
+margin: 2rem auto;
+}
+.resume-bottom> .resume-heading {
+    text-align: center;
+}
+.form-half {
+    display: flex;
+    justify-content: space-between;
+}
+.form-half input {
+    border-radius: 4px;
+    border: 1px solid #272828;
+    padding: 1rem;
+    width: 90%;
+    background: transparent;
+    height: 2.75rem;
+    font-size: 1.2rem;
+}
+.form-item{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.5rem;
+    width: 48%;
+}
+
+form label {
+    display: block;
+    margin-bottom: 1rem;
+}
+.form-radiobtn{
+    display:flex;
+    flex-direction: column;
+
+}
+.form-radiobtn .radio-container
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+    width: 60%;
+}
+.form-radiobtn .radio-container p {
+    padding-right: 1rem;
+}
+.form-full select {
+    font-family: poppins;
+    margin-bottom: 2rem;
+    width: 80%;
+    
+}
+.form-full textarea {
+background: transparent;
+border-radius: 4px;
+border: 1px solid #272828;
+padding: 0.8rem 1rem;
+width: 90%;
+height: 60%;
+font-size: 1.2rem;
+}
+
+.submit-btn input{
+    background: #272828;
+    color:#fff;
+    border-radius: 4px;
+    border: 1px solid #272828;
+    cursor:pointer;
+    font-size: 1.2rem;
+    font-weight: 500;
+    font-family: poppins;
+    padding: 1.4rem;
+    margin-top: 1rem;
+}
+
+footer {
+    height: 38vh;
+    background-color: #272828;
+    max-width: 1000px;
+    width: 90%;
+    margin: 0 auto; 
+}
+footer .profile-contact {
+    padding-top: 3rem;
+}
+footer .profile-contact ul {
+  border: none
+}
+footer .resume-heading {
+    color:#fff;
+    padding: 2rem;
+    text-align: center;
+    width: 90%;
+    font-weight: normal;
+}
+footer #copyright{
+    color: #fff;
+    padding-top: 2rem;
+    padding-bottom: 3rem;
+    
+   display: flex;
+   justify-content: space-evenly;
+   align-items: center;
+
+}
+footer #copyright #copyright-text{
+    
+    justify-self: flex-end;
+}
+#copyright .material-symbols-outlined {
+    font-size: 2rem;
+    background-color: white;
+    color:#272828;
+    border-radius: 100px;
+}
+
+/*---------------MEDIA QUERIES-----------------*/
+@media  screen and (max-width: 768px) {
+    .profile-wrapper {
+
+       display: flex;
+       flex-direction: column;
+    
+    }
+    .profile-wrapper .profile-info {
+        align-self: center;
+    }
+    .profile-contact ul{
+        width: 100%;
+        align-items: center;
+    }
+    .resume {
+        display: flex;
+        flex-direction: column;
+    }
+
+  
 }
