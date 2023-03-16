@@ -1,5 +1,6 @@
+/*---------------------------------------------BEGIN----------------------------------------------------*/
+/*FONT-IMPORT*/
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap');
-
 
 * {
     margin: 0;
@@ -9,7 +10,6 @@ html {
     font-size: 10px;
     font-family: Poppins, sans-serif;
     line-height: 1.6;
-   
     scroll-behavior: smooth;
 }
 body {
@@ -23,13 +23,6 @@ a {
     text-decoration: none;
     color: white;
 }
-a:hover{
-    color: rgba(128, 128, 128, 0.8);
-}
-
-
-
-
 
 /* ------------NAVIGATION BAR--------------*/
 #nav-bar {
@@ -56,62 +49,6 @@ a:hover{
 #nav-bar li a:hover{
     color: rgba(128, 128, 128, 0.8);
 }
-
-
-
-
-/*-------------LAYOUT----------------*/
-/*.container {
-    max-width: 1000px;
-    width: 90%;
-    margin: 0 auto; /* to center the container
-    display: grid;
-    padding: 7rem;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-}
-@media screen and (max-width: 768px) {
-    .container {
-        width: 100%;
-        grid-template-columns: 1fr;
-        padding: 3rem;
-        gap: 7rem;
-    }
-}
-
-.profile {
-    grid-column: 1 / -1;
-    margin-bottom: 2rem;
-    background-color: #272828;
-}
-
-.profile-wrapper {
-    display: flex;
-    gap: 4rem;
-    padding: 2rem;
-}
-.profile-image {
-    max-width: 200px;
-}
-.profile-image img {
-    border-radius: 120%;
-}
-.profile-firstname {
-    color: white;
-    font-weight: 200;
-    font-size: 2rem; /* clamp(2rem, 8vw, 4rem)
-    text-transform: uppercase;
-    display: block;
-    margin-bottom: -0.8rem;
-}
-.profile-lastname {
-    color: rgb(45, 45, 196);
-    font-weight: 200;
-    font-size: 4rem; /*clamp(2.5rem, 15vw, 7rem)
-    display: block;
-    text-transform: uppercase;
-}*/
-
 
 
 /*----------LAYOUT-------------*/
@@ -149,12 +86,11 @@ a:hover{
 }
 .profile-image img {
     border-radius: 120%;
-    opacity: 1;
 }
 .profile-firstname {
     color: white;
     font-weight: 500;
-    font-size: 4.5rem; /* clamp(2rem, 8vw, 4rem)*/
+    font-size: 4.5rem;
     text-transform: uppercase;
     display: block;
     margin-bottom: 0;
@@ -164,7 +100,7 @@ a:hover{
 .profile-lastname {
     color: white;
     font-weight: 500;
-    font-size: 4rem; /*clamp(2.5rem, 15vw, 7rem)**/
+    font-size: 4rem;
     display: block;
     text-transform: uppercase;
     margin-top: 0;
@@ -195,11 +131,7 @@ a:hover{
     padding-top: 1rem;
     padding-bottom: 1rem;
 }
-.profile-contact a {
-    color: white;
-    
-    
-}
+
 .profile-contact a:hover {
     color: rgba(128, 128, 128, 0.8);
 }
@@ -216,10 +148,6 @@ a:hover{
     gap: 5rem;
     padding: 3rem;
     background-color: #fff;
-}
-
-@media screen and (max-width: 768px) {
-    
 }
 
 .resume-description {
@@ -244,14 +172,11 @@ a:hover{
     flex-direction: column;
     gap: 3rem
 }
-.resume-left {
+.resume-left, .resume-right{
     padding-right: 2rem;
     padding-left: 2rem;
 }
-.resume-right{
-    padding-right: 2rem;
-    padding-left: 2rem;
-}
+
 .resume-bottom {
     border-top: 1px solid #a6a6a6;
     grid-column: 1 / 3;
@@ -306,7 +231,7 @@ a:hover{
 form {
 margin: 2rem auto;
 }
-.resume-bottom> .resume-heading {
+.resume-bottom > .resume-heading {
     text-align: center;
 }
 .form-half {
@@ -389,9 +314,6 @@ footer {
 footer .profile-contact {
     padding-top: 3rem;
 }
-footer .profile-contact ul {
-
-}
 footer .resume-heading {
     color:#fff;
     padding: 2rem;
@@ -410,10 +332,6 @@ footer #copyright{
    gap: 3rem;
 
 
-}
-footer #copyright #copyright-text{
-    
- 
 }
 /***Animation code***/
 @keyframes Movingbutton {
@@ -437,6 +355,8 @@ footer #copyright #copyright-text{
     animation-name: Movingbutton;
     animation-timing-function: ease;
 }
+
+
 /*---------------MEDIA QUERIES-----------------*/
 
 /*--------LAPTOP BREAKPOINT------------------*/
@@ -445,12 +365,19 @@ footer #copyright #copyright-text{
     width: 70%;
    }
 }
+@media screen and (max-width:1366px) {
+    #nav-bar {
+        width: 81%;
+       }
+}
 
 @media screen and (max-width:1024px){
     #nav-bar {
     width: 90%;
    }
 }
+
+/*----------TABLET BREAKPOINT-----------------*/
 @media  screen and (max-width: 768px) {
     .container {
         padding-top: 4rem;
@@ -485,14 +412,19 @@ footer #copyright #copyright-text{
     }
     #nav-bar {
         position: fixed;
-      width: 100%;
+      width: 90%;
+      margin-left: 3.8rem;
     }
 
   
 }
-@media screen and (max-width: 414px) {
+/*---------------PHONE BREAKPOINT----------------*/
+@media screen and (max-width: 425px) {
     .container {
         padding-top: 2rem;
+    }
+    #nav-bar {
+        margin-left: 2rem;
     }
     #nav-bar ul{
         font-size: 0.9rem;
@@ -515,6 +447,9 @@ footer #copyright #copyright-text{
     
 }
     @media screen and (max-width: 320px) {
+        #nav-bar {
+            margin-left: 1.6rem;
+        }
         #nav-bar ul{
             font-size: 0.6rem;
         }
@@ -529,3 +464,5 @@ footer #copyright #copyright-text{
         }
 
 }
+
+/*---------------------------------------------END------------------------------------*/
