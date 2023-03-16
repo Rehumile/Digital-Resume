@@ -9,14 +9,24 @@ html {
     font-size: 10px;
     font-family: Poppins, sans-serif;
     line-height: 1.6;
-    background-color: #ebecf0;
+   
     scroll-behavior: smooth;
+}
+body {
+     background-image: url("/Images/background-img2.jpg");
+     background-repeat: no-repeat;
+     background-size: cover;
+     background-attachment: fixed;
 }
 /* common styles */
 a {
     text-decoration: none;
     color: white;
 }
+a:hover{
+    color: rgba(128, 128, 128, 0.8);
+}
+
 
 
 
@@ -30,17 +40,23 @@ a {
   padding-bottom: 1rem;
  border-bottom: solid 2px white;
  border-top: solid 2px white;
+
 }
 #nav-bar ul{
     font-size: 1.2rem;
     display: grid;
     grid-template-columns: repeat(6, 1fr);
+    
 }
 #nav-bar ul li {
     list-style-type: none;
     color: #fff;
     justify-self: center;
 }
+#nav-bar li a:hover{
+    color: rgba(128, 128, 128, 0.8);
+}
+
 
 
 
@@ -103,32 +119,37 @@ a {
     max-width: 1000px;
     width: 90%;
     margin: 0 auto; /* to center the container*/
+    
 }
 
 /*-------------PROFILE/HERO SECTION-----------*/
 .profile{
     background-color: #272828;
     padding: 2rem;
+    padding-bottom: 3rem;
     border-bottom: 2px solid rgb(45, 45, 196);
 }
 
 .profile-wrapper { /*used display grid because */
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 1rem;
+    gap: 2rem;
     width: 85%;
     margin: auto;
 }
 
 .profile-info{
     margin-right: 1rem;
+    padding-top: 2rem;
 }
 .profile-image {
     max-width: 200px;
     margin-left: 5rem;
+    justify-self: end;
 }
 .profile-image img {
     border-radius: 120%;
+    opacity: 1;
 }
 .profile-firstname {
     color: white;
@@ -139,6 +160,7 @@ a {
     margin-bottom: 0;
 
 }
+
 .profile-lastname {
     color: white;
     font-weight: 500;
@@ -177,6 +199,9 @@ a {
     color: white;
     
     
+}
+.profile-contact a:hover {
+    color: rgba(128, 128, 128, 0.8);
 }
 .material-symbols-outlined{
     color: white;
@@ -225,6 +250,7 @@ a {
 }
 .resume-right{
     padding-right: 2rem;
+    padding-left: 2rem;
 }
 .resume-bottom {
     border-top: 1px solid #a6a6a6;
@@ -264,6 +290,9 @@ a {
 .project-content a {
     color:#000;
     font-weight: 500;
+}
+.project-content a:hover {
+    color: rgb(45, 45, 196);
 }
 /*Border bottom*/
 
@@ -386,21 +415,49 @@ footer #copyright #copyright-text{
     
  
 }
+/***Animation code***/
+@keyframes Movingbutton {
+    0% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
 #copyright .material-symbols-outlined {
     font-size: 4rem;
     background-color: white;
     color:#272828;
     border-radius: 100px;
    align-self: flex-end;
+   animation-duration: 1s ;
+    animation-iteration-count: 1;
+}
+#copyright .material-symbols-outlined:hover {
+    animation-name: Movingbutton;
+    animation-timing-function: ease;
+}
+/*---------------MEDIA QUERIES-----------------*/
+
+/*--------LAPTOP BREAKPOINT------------------*/
+@media screen and (max-width:1440px) {
+   #nav-bar {
+    width: 70%;
+   }
 }
 
-/*---------------MEDIA QUERIES-----------------*/
+@media screen and (max-width:1024px){
+    #nav-bar {
+    width: 90%;
+   }
+}
 @media  screen and (max-width: 768px) {
+    .container {
+        padding-top: 4rem;
+    }
     .profile-wrapper {
-
        display: flex;
        flex-direction: column;
-    
     }
     .profile-wrapper .profile-info {
         align-self: center;
@@ -409,10 +466,66 @@ footer #copyright #copyright-text{
         width: 100%;
         align-items: center;
     }
+    .profile-image {
+        margin: 0 auto;
+    }
+    .profile-info {
+       text-align:center
+    }
     .resume {
         display: flex;
         flex-direction: column;
     }
+    .resume-experience {
+        border-bottom: 1px solid #a6a6a6;
+        padding-bottom: 1.5rem;
+    }
+    footer {
+        height: 55vh;
+    }
+    #nav-bar {
+        position: fixed;
+      width: 100%;
+    }
 
   
+}
+@media screen and (max-width: 414px) {
+    .container {
+        padding-top: 2rem;
+    }
+    #nav-bar ul{
+        font-size: 0.9rem;
+    }
+    .profile-info{
+        margin-right:0;
+    }
+    .profile-image {
+        margin: 1rem auto;
+    }
+    .form-half {
+        display: flex;
+        flex-direction: column;
+    }
+    .form-half input {
+        width: 100%;
+        height: 2rem;
+    
+    }
+    
+}
+    @media screen and (max-width: 320px) {
+        #nav-bar ul{
+            font-size: 0.6rem;
+        }
+        .profile-image img {
+          align-self: center;
+        }
+        .profile-firstname{
+            font-size: 3.5rem;
+        }
+        .profile-lastname{
+            font-size: 3rem;
+        }
+
 }
